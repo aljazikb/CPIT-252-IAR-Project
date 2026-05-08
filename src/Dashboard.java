@@ -1,0 +1,383 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package GUI;
+
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+/**
+ *
+ * @author aljaz
+ */
+public class Dashboard extends javax.swing.JFrame {
+
+    // Colors نفس ProductPanel
+    private final Color ACCENT = new Color(59,130,246);
+    private final Color TEXT_LIGHT = Color.WHITE;
+    private final Color TEXT_MUTED = new Color(148,163,184);
+    private final Color BG_DARK = new Color(15,23,42);
+    private final Color CARD_BG = new Color(30,41,59);
+
+    public Dashboard() {
+
+        initComponents();
+
+        setTitle("Inventory Management System");
+
+        setSize(1400, 850);
+
+        setLocationRelativeTo(null);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        getContentPane().setBackground(BG_DARK);
+
+        setLayout(null);
+
+        // Main Card
+        JPanel card = new JPanel();
+
+        card.setLayout(null);
+
+        card.setBackground(CARD_BG);
+
+        card.setBounds(140, 70, 1120, 650);
+
+        card.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(
+                        new Color(44, 62, 80)),
+                BorderFactory.createEmptyBorder(
+                        30, 30, 30, 30)));
+
+        add(card);
+
+        // Title
+        JLabel title = new JLabel(
+                "Inventory Management System");
+
+        title.setFont(new Font(
+                "Segoe UI",
+                Font.BOLD,
+                42));
+
+        title.setForeground(TEXT_LIGHT);
+
+        title.setBounds(250, 40, 700, 60);
+
+        card.add(title);
+
+        // Subtitle
+        JLabel subtitle = new JLabel(
+                "Manage products, stock and reports");
+
+        subtitle.setFont(new Font(
+                "Segoe UI",
+                Font.PLAIN,
+                18));
+
+        subtitle.setForeground(TEXT_MUTED);
+
+        subtitle.setBounds(340, 95, 500, 30);
+
+        card.add(subtitle);
+
+        // Buttons
+        styleButton(jButton1);
+        styleButton(Stock);
+        styleButton(jButton3);
+        styleButton(jButton4);
+        styleButton(generateReport);
+        styleButton(LogoutBtn);
+
+        // Positions
+        jButton1.setBounds(160, 200, 320, 90);
+
+        Stock.setBounds(620, 200, 320, 90);
+
+        jButton3.setBounds(160, 350, 320, 90);
+
+        jButton4.setBounds(620, 350, 320, 90);
+
+        generateReport.setBounds(250, 520, 250, 70);
+
+        LogoutBtn.setBounds(620, 520, 250, 70);
+
+        // Add buttons inside card
+        card.add(jButton1);
+
+        card.add(Stock);
+
+        card.add(jButton3);
+
+        card.add(jButton4);
+
+        card.add(generateReport);
+
+        card.add(LogoutBtn);
+    }
+
+
+    private void styleButton(JButton button) {
+
+        button.setBackground(new Color(30, 41, 59));
+
+        button.setForeground(TEXT_LIGHT);
+
+        button.setFocusPainted(false);
+
+        button.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(
+                        new Color(55, 65, 81)),
+                BorderFactory.createEmptyBorder(
+                        15, 25, 15, 25)));
+
+        button.setCursor(
+                Cursor.getPredefinedCursor(
+                        Cursor.HAND_CURSOR));
+
+        button.setFont(new Font(
+                "Segoe UI",
+                Font.BOLD,
+                22));
+
+        // Hover Effect
+        button.addMouseListener(
+                new java.awt.event.MouseAdapter() {
+
+            @Override
+            public void mouseEntered(
+                    java.awt.event.MouseEvent evt) {
+
+                button.setBackground(ACCENT);
+
+                button.setForeground(
+                        new Color(15, 23, 42));
+            }
+
+            @Override
+            public void mouseExited(
+                    java.awt.event.MouseEvent evt) {
+
+                button.setBackground(
+                        new Color(30, 41, 59));
+
+                button.setForeground(TEXT_LIGHT);
+            }
+        });
+    
+       
+    }
+
+
+   private void addHoverEffect(javax.swing.JButton btn) {
+    Color normal = new Color(52, 73, 94);
+    Color hover = new Color(41, 128, 185);
+
+    btn.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseEntered(java.awt.event.MouseEvent evt) {
+            btn.setBackground(hover);
+        }
+
+        public void mouseExited(java.awt.event.MouseEvent evt) {
+            btn.setBackground(normal);
+        }
+    });
+}
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jButton1 = new javax.swing.JButton();
+        Stock = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        generateReport = new javax.swing.JButton();
+        LogoutBtn = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButton1.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 24)); // NOI18N
+        jButton1.setText("Production Management");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        Stock.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 24)); // NOI18N
+        Stock.setText("Stock Management");
+        Stock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StockActionPerformed(evt);
+            }
+        });
+
+        jButton4.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 24)); // NOI18N
+        jButton4.setText("Machine Operations  ");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setFont(new java.awt.Font("Tw Cen MT Condensed", 0, 24)); // NOI18N
+        jButton3.setText("Worker Analysis");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        generateReport.setText("Generate Report");
+        generateReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generateReportActionPerformed(evt);
+            }
+        });
+
+        LogoutBtn.setText("Logout");
+        LogoutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Stock, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(generateReport, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LogoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(1135, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(349, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(60, 60, 60)
+                .addComponent(Stock)
+                .addGap(60, 60, 60)
+                .addComponent(jButton3)
+                .addGap(60, 60, 60)
+                .addComponent(jButton4)
+                .addGap(70, 70, 70)
+                .addComponent(generateReport)
+                .addGap(18, 18, 18)
+                .addComponent(LogoutBtn)
+                .addGap(35, 35, 35))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        //new ProductionManagement_GUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void StockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StockActionPerformed
+        // TODO add your handling code here:
+       // new StockManagement_GUI().setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_StockActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        //new  MachineOperation_GUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        //new WorkerAnalysis_GUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void generateReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateReportActionPerformed
+        // TODO add your handling code here:
+        //GenerateReport.generateProductionReport();
+        /*
+        new GenerateReport_GUI().setVisible(true);
+        this.dispose();*/
+    }//GEN-LAST:event_generateReportActionPerformed
+
+    private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
+        // TODO add your handling code here:
+        //new  Login_GUI().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_LogoutBtnActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Dashboard().setVisible(true);
+            }
+        });
+}
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton LogoutBtn;
+    private javax.swing.JButton Stock;
+    private javax.swing.JButton generateReport;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    // End of variables declaration//GEN-END:variables
+}
