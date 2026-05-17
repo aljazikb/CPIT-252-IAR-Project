@@ -1,0 +1,10 @@
+			 INVENTORY STOCK REPORT
+
+Manager ID: 100
+
+ID           Name                 Category        Type            Unit Price   Quantity   Total Value     Pricing        
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+1            Robot                Electronics     RobotToy        $45.99       20         $919.80         No Discount                   
+4            Laptop               Electronics     PortableDevice  $2500.00     5          $12500.00       No Discount                   
+
+========================================================================================================================
